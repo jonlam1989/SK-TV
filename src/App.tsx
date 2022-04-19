@@ -1,5 +1,8 @@
+//Components
+import { Navbar } from './components';
+
 function App() {
-	return <div>hello world</div>;
+	return <Navbar />;
 }
 
 export default App;
