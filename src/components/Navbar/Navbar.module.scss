@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 4rem;
+    padding: $spacing-sm;
+    color: $primary-text;
+    box-shadow: $dark-shadow;
+}
+
+.navBrand {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+}
+
+.navLinks {
+    display: none;
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(125px, 1fr));
+        justify-items: center;
+
+        a {
+            color: $primary-text;
+        }
+    }
+
+    @include for-size('tablet-and-up') {
+        display: inline-block;
+    }
+}
+
+.navToggleMenu {
+    justify-self: end;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    @include for-size('tablet-and-up') {
+        display: none;
+    }
+}

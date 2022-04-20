@@ -10,6 +10,10 @@ body {
     font-family: $Manrope;
     background: $bg;
 
+    ul {
+        list-style: none;
+    }
+
     a {
         color: unset;
         text-decoration: none;

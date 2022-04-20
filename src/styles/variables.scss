@@ -5,3 +5,24 @@ $Manrope: 'Manrope', sans-serif;
 
 //colors
 $bg: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 1%, rgba(4, 12, 24, 1) 100%);
+$primary-text: #fff;
+
+//shadows
+$light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+$dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+//spacings
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+
+//breakpoints
+$breakpoints: (
+    phone-and-up: 640px,
+    tablet-and-up: 768px,
+    desktop-and-up: 1024px
+);
+
+@mixin for-size($size) {
+    @media (min-width: map-get($breakpoints, $size)) {@content;}
+}
