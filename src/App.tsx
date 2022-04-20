@@ -1,8 +1,8 @@
 //Components
 import { Navbar } from './components';
 
-function App() {
+const App: React.FC = () => {
 	return <Navbar />;
-}
+};
 
 export default App;

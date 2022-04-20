@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 //Styles
 import styles from './Navbar.module.scss';
 //Icons
@@ -6,11 +6,28 @@ import tv_icon from '../../assests/images/tv_icon.svg';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
 	const [ showLinks, setShowLinks ] = useState(false);
+	
+	const menuContainerRef = useRef<HTMLDivElement>(null);
+	const menuContentRef = useRef<HTMLUListElement>(null);
 
-	const menu = (
-		<ul>
+	//for menu animation
+	useEffect(
+		() => {
+			const menuHeight : number | undefined = menuContentRef.current?.getBoundingClientRect().height;
+			
+			if (menuContainerRef.current) {
+				showLinks
+					? (menuContainerRef.current.style.height = `${menuHeight}px`)
+					: (menuContainerRef.current.style.height = `0px`);
+			}
+		},
+		[ showLinks ]
+	);
+
+	const menu: JSX.Element = (
+		<ul className={styles.navMenuContent} ref={menuContentRef}>
 			<li>
 				<a href='/'>Movies</a>
 			</li>
@@ -41,7 +58,10 @@ const Navbar = () => {
 				) : (
 					<BiMenuAltRight onClick={() => setShowLinks(true)} />
 				)}
-				{showLinks && <div className={styles.navMenuContent}>{menu}</div>}
+				
+				<div className={styles.navMenuContainer} ref={menuContainerRef}>
+					{menu}
+				</div>
 			</div>
 		</nav>
 	);
