@@ -5,11 +5,15 @@ $Manrope: 'Manrope', sans-serif;
 
 //colors
 $bg: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 1%, rgba(4, 12, 24, 1) 100%);
+$menuContent-bg: #011126;
 $primary-text: #fff;
 
 //shadows
-$light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+$light-shadow: 0 0 10px rgba(66, 147, 240, 0.7);
 $dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+//border
+$border-radius: 5px;
 
 //spacings
 $spacing-sm: 1rem;

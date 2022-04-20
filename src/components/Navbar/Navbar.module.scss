@@ -36,7 +36,27 @@ nav {
 .navToggleMenu {
     justify-self: end;
     font-size: 1.5rem;
-    cursor: pointer;
+    position: relative;
+    
+    svg {
+        cursor: pointer;
+    }
+
+    .navMenuContent {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        min-width: 250px;
+        padding: $spacing-lg;
+        font-size: 1.2rem;
+        background: $menuContent-bg;
+        border-radius: $border-radius;
+        box-shadow: $light-shadow;
+
+        li {
+            margin-bottom: $spacing-lg;
+        }
+    }
 
     @include for-size('tablet-and-up') {
         display: none;

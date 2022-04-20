@@ -1,3 +1,4 @@
+import { useState } from 'react';
 //Styles
 import styles from './Navbar.module.scss';
 //Icons
@@ -6,30 +7,41 @@ import { BiMenuAltRight } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
 
 const Navbar = () => {
+	const [ showLinks, setShowLinks ] = useState(false);
+
+	const menu = (
+		<ul>
+			<li>
+				<a href='/'>Movies</a>
+			</li>
+			<li>
+				<a href='/'>Top 10 Movies</a>
+			</li>
+			<li>
+				<a href='/'>TV Shows</a>
+			</li>
+			<li>
+				<a href='/'>Top 10 TV Shows</a>
+			</li>
+		</ul>
+	);
+
 	return (
 		<nav>
 			<div className={styles.navBrand}>
 				<h2>SK-TV</h2>
 				<img src={tv_icon} alt='brand-logo' />
 			</div>
-			<div className={styles.navLinks}>
-				<ul>
-					<li>
-						<a href='/'>Movies</a>
-					</li>
-					<li>
-						<a href='/'>Top 10 Movies</a>
-					</li>
-					<li>
-						<a href='/'>TV Shows</a>
-					</li>
-					<li>
-						<a href='/'>Top 10 TV Shows</a>
-					</li>
-				</ul>
-			</div>
+
+			<div className={styles.navLinks}>{menu}</div>
+
 			<div className={styles.navToggleMenu}>
-				<BiMenuAltRight />
+				{showLinks ? (
+					<RiCloseLine onClick={() => setShowLinks(false)} />
+				) : (
+					<BiMenuAltRight onClick={() => setShowLinks(true)} />
+				)}
+				{showLinks && <div className={styles.navMenuContent}>{menu}</div>}
 			</div>
 		</nav>
 	);
