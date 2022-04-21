@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+//Routing
+import { NavLink } from 'react-router-dom';
 //Styles
 import styles from './Navbar.module.scss';
 //Icons
@@ -8,7 +10,7 @@ import { RiCloseLine } from 'react-icons/ri';
 
 const Navbar: React.FC = () => {
 	const [ showLinks, setShowLinks ] = useState(false);
-	
+
 	const menuContainerRef = useRef<HTMLDivElement>(null);
 	const menuContentRef = useRef<HTMLUListElement>(null);
 
@@ -29,16 +31,16 @@ const Navbar: React.FC = () => {
 	const menu: JSX.Element = (
 		<ul className={styles.navMenuContent} ref={menuContentRef}>
 			<li>
-				<a href='/'>Movies</a>
+				<NavLink to='/'>Movies</NavLink>
 			</li>
 			<li>
-				<a href='/'>Top 10 Movies</a>
+				<NavLink to='/'>Top 10 Movies</NavLink>
 			</li>
 			<li>
-				<a href='/'>TV Shows</a>
+				<NavLink to='/'>TV Shows</NavLink>
 			</li>
 			<li>
-				<a href='/'>Top 10 TV Shows</a>
+				<NavLink to='/'>Top 10 TV Shows</NavLink>
 			</li>
 		</ul>
 	);
