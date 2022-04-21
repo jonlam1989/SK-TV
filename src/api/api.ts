@@ -14,7 +14,7 @@ const fetchTopTenMovies = async (id: string) => {
 const fetchTvSeries = async () => {
 	const response = await fetch(KOREAN_TV_SERIES);
 	const data = await response.json();
-	console.log(data);
+	return data;
 };
 const fetchTopTenSeries = async (id: string) => {
 	const url = KOREAN_TOP_TEN_SERIES.replace('{id}', id);

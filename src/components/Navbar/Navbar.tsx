@@ -37,10 +37,10 @@ const Navbar: React.FC = () => {
 				<NavLink to='/'>Top 10 Movies</NavLink>
 			</li>
 			<li>
-				<NavLink to='/'>TV Shows</NavLink>
+				<NavLink to='/tv-series'>TV Series</NavLink>
 			</li>
 			<li>
-				<NavLink to='/'>Top 10 TV Shows</NavLink>
+				<NavLink to='/'>Top 10 TV Series</NavLink>
 			</li>
 		</ul>
 	);

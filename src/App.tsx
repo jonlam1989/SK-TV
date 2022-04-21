@@ -2,14 +2,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //Components
 import { Navbar } from './components';
-import { Movie } from './pages';
+import { Movies, TvSeries } from './pages';
 
 const App: React.FC = () => {
 	return (
 		<Router>
 			<Navbar />;
 			<Routes>
-				<Route path='/' element={<Movie />} />
+				<Route path='/' element={<Movies />} />
+				<Route path='/tv-series' element={<TvSeries />} />
 			</Routes>
 		</Router>
 	);
