@@ -3,7 +3,7 @@ import { KOREAN_MOVIES, KOREAN_TV_SERIES, KOREAN_TOP_TEN_MOVIES, KOREAN_TOP_TEN_
 const fetchMovies = async () => {
 	const response = await fetch(KOREAN_MOVIES);
 	const data = await response.json();
-	console.log(data);
+	return data;
 };
 const fetchTopTenMovies = async (id: string) => {
 	const url = KOREAN_TOP_TEN_MOVIES.replace('{id}', id);
