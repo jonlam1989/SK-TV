@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 //API
 import { fetchMovies } from '../api/api';
+import { MovieType } from '../api/api_types';
 
 //set initialState to have the same properties as the returned object from the fetchMovies api
 const initialState = {
 	page: 0,
-	results: [],
+	results: [] as MovieType[],
 	total_pages: 0,
 	total_results: 0
 };
