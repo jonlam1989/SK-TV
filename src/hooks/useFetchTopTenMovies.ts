@@ -21,9 +21,9 @@ const useFetchTopTenMovies = () => {
 			//use a temporary-data array to prevent multiple re-renders
 			//if had used setState((prev)=>[...prev, specificMovie]):
 			//    -there would have been a re-render for each iteration in the for-loop
-			let tempData: SpecificMovieType[] = [];
-			for (let [ movie, imdbID ] of Object.entries(imdbMovieIds)) {
-				const specificMovie: any = await fetchTopTenMovies(imdbID);
+			let tempData = [];
+			for (let imdbID of Object.values(imdbMovieIds)) {
+				const specificMovie = await fetchTopTenMovies(imdbID);
 				tempData.push(specificMovie);
 			}
 			setState([ ...tempData ]);
