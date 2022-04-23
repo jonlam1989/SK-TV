@@ -7,7 +7,7 @@ import { Movies, TvSeries, TopTenMovies, TopTenTvSeries } from './pages';
 const App: React.FC = () => {
 	return (
 		<Router>
-			<Navbar />;
+			<Navbar />
 			<Routes>
 				<Route path='/' element={<Movies />} />
 				<Route path='/tv-series' element={<TvSeries />} />

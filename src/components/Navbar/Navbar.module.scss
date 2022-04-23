@@ -4,10 +4,10 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    height: 4rem;
-    padding: $spacing-sm;
+    height: 5rem;
+    padding: $spacing-md;
     color: $primary-text;
-    box-shadow: $dark-shadow;
+    z-index: 1;
 }
 
 .navBrand {
@@ -35,7 +35,7 @@ nav {
 
 .navToggleMenu {
     justify-self: end;
-    font-size: 1.5rem;
+    font-size: $font-size-md;
     position: relative;
     
     svg {
@@ -51,11 +51,12 @@ nav {
         background: $menuContent-bg;
         border-radius: $border-radius;
         box-shadow: $light-shadow;
-        transition: 0.5s ease-in-out;
+        transition: $transition;
         overflow: hidden;
-        
+        z-index: 2;
+
         .navMenuContent {
-            font-size: 1.2rem;
+            font-size: $font-size-sm;
             padding: $spacing-lg;
             
             li {

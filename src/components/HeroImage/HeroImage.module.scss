@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.heroImageContainer {
+    height: 600px;
+    z-index: 0;
+    position: relative;
+}
+
+.heroImageContent {
+    position: absolute;
+    bottom: 50px;
+    padding: $spacing-lg;
+    color: $primary-text;
+    text-shadow: $dark-shadow;
+
+    @include for-size(tablet-and-up) {
+        padding: 0 5rem;
+
+        h2 {
+            font-size: $font-size-xl;
+        }
+
+        p {
+            font-size: $font-size-sm;
+        }
+    }
+}

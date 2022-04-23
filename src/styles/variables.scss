@@ -3,17 +3,26 @@
 //fonts
 $Manrope: 'Manrope', sans-serif;
 
+//font-sizes
+$font-size-sm: 1.2rem;
+$font-size-md: 1.5rem;
+$font-size-lg: 2rem;
+$font-size-xl: 2.5rem;
+
 //colors
 $bg: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 1%, rgba(4, 12, 24, 1) 100%);
 $menuContent-bg: #011126;
 $primary-text: #fff;
 
 //shadows
-$light-shadow: 0 0 10px rgba(66, 147, 240, 0.7);
-$dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+$light-shadow: 2px 2px 10px rgba(66, 147, 240, 0.7);
+$dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
 
 //border
 $border-radius: 5px;
+
+//transition
+$transition: 0.5s ease-in-out;
 
 //spacings
 $spacing-sm: 1rem;

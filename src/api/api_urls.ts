@@ -8,4 +8,7 @@ const KOREAN_TOP_TEN_MOVIES: string = `${API_BASE_URL}/movie/{id}?api_key=${API_
 const KOREAN_TV_SERIES: string = `${API_BASE_URL}/discover/tv?api_key=${API_KEY}&with_original_language=ko`;
 const KOREAN_TOP_TEN_SERIES: string = `${API_BASE_URL}/find/{id}?api_key=${API_KEY}&language=en-US&external_source=imdb_id`;
 
-export { KOREAN_MOVIES, KOREAN_TV_SERIES, KOREAN_TOP_TEN_MOVIES, KOREAN_TOP_TEN_SERIES };
+//URL for images
+const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w1280/';
+
+export { KOREAN_MOVIES, KOREAN_TV_SERIES, KOREAN_TOP_TEN_MOVIES, KOREAN_TOP_TEN_SERIES, IMAGE_BASE_URL };
