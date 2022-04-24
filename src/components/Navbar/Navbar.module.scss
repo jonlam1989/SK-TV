@@ -13,6 +13,7 @@ nav {
 .navBrand {
     display: grid;
     grid-template-columns: 75px 1fr;
+    text-shadow: $dark-shadow;
 }
 
 .navLinks {
@@ -20,11 +21,33 @@ nav {
 
     ul {
         display: grid;
-        grid-template-columns: repeat(4, minmax(125px, 1fr));
+        grid-template-columns: repeat(4, minmax(130px, 1fr));
         justify-items: center;
+        
+        li {
+            position: relative;
+        }
 
         a {
             color: $primary-text;
+            font-weight: 600;
+            text-shadow: $dark-shadow;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: -8px;
+                width: 0%;
+                height: 2px;
+                background: $primary-text;
+                transition: $fast-transition;
+            }
+
+            &:hover::after {
+                left: 0;
+                width: 100%;
+            }
         }
     }
 
@@ -58,9 +81,16 @@ nav {
         .navMenuContent {
             font-size: $font-size-sm;
             padding: $spacing-lg;
+            text-shadow: $dark-shadow;
             
             li {
                 margin-bottom: $spacing-lg;
+                transition: $fast-transition;
+                
+                &:hover {
+                    padding-left: $spacing-sm;
+                    box-shadow: -3px 0px $primary-text;
+                }
             }
         }
     }
