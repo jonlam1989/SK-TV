@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.gridContainer {
+    p {
+        margin: 1rem 2rem;
+        color: $primary-text;
+        font-size: $font-size-sm;
+        font-weight: 800;
+        letter-spacing: 4px;
+        text-shadow: $dark-shadow;
+        text-transform: uppercase;
+
+        @include for-size(tablet-and-up) {
+            margin: 1rem 5rem;
+            font-size: $font-size-md;
+        }
+    }
+}

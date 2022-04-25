@@ -1,5 +1,5 @@
 //Components
-import { HeroImage, Spinner } from '../../components';
+import { Grid, HeroImage, Spinner } from '../../components';
 //custom hook
 import useFetchMovies from '../../hooks/useFetchMovies';
 
@@ -19,6 +19,7 @@ const Movies: React.FC = () => {
 					overview={state.results[0].overview}
 				/>
 			)}
+			<Grid page='Movies' />
 		</main>
 	);
 };
