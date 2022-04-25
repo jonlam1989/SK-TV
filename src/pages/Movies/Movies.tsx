@@ -1,5 +1,5 @@
 //Components
-import { HeroImage } from '../../components';
+import { HeroImage, Spinner } from '../../components';
 //custom hook
 import useFetchMovies from '../../hooks/useFetchMovies';
 
@@ -11,6 +11,7 @@ const Movies: React.FC = () => {
 
 	return (
 		<main>
+			{loading && <Spinner />}
 			{state.results[0] && (
 				<HeroImage
 					backdrop_path={state.results[0].backdrop_path}
