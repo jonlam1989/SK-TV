@@ -22,14 +22,15 @@
     padding: $spacing-lg;
     color: $primary-text;
     text-shadow: $dark-shadow;
-
+    filter: brightness(2);
+    
     @include for-size(tablet-and-up) {
         padding: 0 5rem;
-
+        
         h2 {
             font-size: $font-size-xl;
         }
-
+        
         p {
             font-size: $font-size-sm;
         }

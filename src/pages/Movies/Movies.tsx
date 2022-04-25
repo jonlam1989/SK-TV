@@ -3,7 +3,7 @@ import { HeroImage } from '../../components';
 //custom hook
 import useFetchMovies from '../../hooks/useFetchMovies';
 
-const Movies = () => {
+const Movies: React.FC = () => {
 	const { state, loading, error } = useFetchMovies();
 	console.log(state);
 
