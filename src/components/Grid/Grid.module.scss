@@ -1,28 +1,39 @@
 @import '../../styles/variables.scss';
 
 .gridContainer {
-    p {
-        margin: 1rem 2rem;
+    div:first-child {
         color: $primary-text;
-        font-size: $font-size-sm;
-        font-weight: 800;
-        letter-spacing: 2px;
-        text-shadow: $dark-shadow;
-        text-transform: uppercase;
-        
-        @include for-size(tablet-and-up) {
-            margin: 1rem 5rem;
-            font-size: $font-size-md;
+
+        p {
+            margin: 1rem 2rem 0rem;
+            font-size: $font-size-sm;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: $dark-shadow;
+            text-transform: uppercase;
+            
+            @include for-size(tablet-and-up) {
+                margin: 1rem 5rem 0rem;
+                font-size: $font-size-md;
+            }
+        }
+    
+        small {
+            margin-left: 3rem;
+            letter-spacing: 3px;
+    
+            @include for-size(tablet-and-up) {
+                margin-left: 6rem;
+            }
         }
     }
-    
 }
 
 .gridContent {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 2rem;
-    padding: $spacing-sm;
+    padding: $spacing-md;
     
     @include for-size(phone-and-up) {
         padding: $spacing-lg;
