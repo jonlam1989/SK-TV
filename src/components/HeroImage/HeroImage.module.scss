@@ -4,7 +4,7 @@
     height: 600px;
     z-index: 0;
     position: relative;
-    animation: fadeIn $transition;
+    animation: fadeIn 3s linear;
 
     @keyframes fadeIn {
         0% {

@@ -19,7 +19,7 @@ const TvSeries: React.FC = () => {
 					overview={state.results[0].overview}
 				/>
 			)}
-			<Grid page='TV Series' />
+			{/* <Grid page='TV Series' /> */}
 		</main>
 	);
 };

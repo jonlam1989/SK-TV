@@ -9,10 +9,22 @@
         letter-spacing: 2px;
         text-shadow: $dark-shadow;
         text-transform: uppercase;
-
+        
         @include for-size(tablet-and-up) {
             margin: 1rem 5rem;
             font-size: $font-size-md;
         }
+    }
+    
+}
+
+.gridContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: $spacing-sm;
+    
+    @include for-size(phone-and-up) {
+        padding: $spacing-lg;
     }
 }

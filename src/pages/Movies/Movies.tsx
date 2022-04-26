@@ -1,5 +1,5 @@
 //Components
-import { Grid, HeroImage, Spinner } from '../../components';
+import { Grid, GridItem, HeroImage, Spinner } from '../../components';
 //custom hook
 import useFetchMovies from '../../hooks/useFetchMovies';
 
@@ -19,7 +19,9 @@ const Movies: React.FC = () => {
 					overview={state.results[0].overview}
 				/>
 			)}
-			<Grid page='Movies' />
+			<Grid page='Movies'>
+				{state.results.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
+			</Grid>
 		</main>
 	);
 };
