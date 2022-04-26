@@ -1,5 +1,5 @@
 //Components
-import { Grid, HeroImage, Spinner } from '../../components';
+import { Grid, GridItem, HeroImage, Spinner } from '../../components';
 //custom hook
 import useFetchTvSeries from '../../hooks/useFetchTvSeries';
 
@@ -19,7 +19,9 @@ const TvSeries: React.FC = () => {
 					overview={state.results[0].overview}
 				/>
 			)}
-			{/* <Grid page='TV Series' /> */}
+			<Grid page='TV Series'>
+				{state.results.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
+			</Grid>
 		</main>
 	);
 };

@@ -3,4 +3,10 @@
 .gridItemImage {
     width: 100%;
     border-radius: $border-radius;
+    transition: $transition;
+    cursor: pointer;
+   
+    &:hover {
+        filter: brightness(0.3);
+    }
 }
