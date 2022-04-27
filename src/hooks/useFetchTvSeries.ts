@@ -15,15 +15,16 @@ const useFetchTvSeries = () => {
 	const [ state, setState ] = useState(initialState);
 	const [ loading, setLoading ] = useState(false);
 	const [ error, setError ] = useState(false);
+	const [ loadMore, setLoadMore ] = useState(false);
 
 	//either store data from api in state or throw an error
-	const getData = async () => {
+	const getData = async (page: number = 1) => {
 		try {
 			setLoading(true);
 			setError(false);
 
-			const data = await fetchTvSeries();
-			setState({ ...data });
+			const data = await fetchTvSeries(page);
+			setState((prev) => ({ ...data, results: [ ...prev.results, ...data.results ] }));
 
 			setLoading(false);
 		} catch (error) {
@@ -37,7 +38,18 @@ const useFetchTvSeries = () => {
 		getData();
 	}, []);
 
-	return { state, loading, error };
+	//get data when page changes
+	useEffect(
+		() => {
+			if (loadMore) {
+				getData(state.page + 1);
+				setLoadMore(false);
+			}
+		},
+		[ loadMore, state.page ]
+	);
+
+	return { state, loading, error, setLoadMore };
 };
 
 export default useFetchTvSeries;

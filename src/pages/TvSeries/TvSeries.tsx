@@ -4,7 +4,7 @@ import { Button, Grid, GridItem, HeroImage, Spinner } from '../../components';
 import useFetchTvSeries from '../../hooks/useFetchTvSeries';
 
 const TvSeries: React.FC = () => {
-	const { state, loading, error } = useFetchTvSeries();
+	const { state, loading, error, setLoadMore } = useFetchTvSeries();
 	console.log(state);
 
 	if (error) return <div>Something went wrong...</div>;
@@ -22,7 +22,7 @@ const TvSeries: React.FC = () => {
 					<Grid page='TV Series'>
 						{state.results.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
 					</Grid>
-					<Button callback={()=>console.log('clicked')}/>
+					<Button callback={()=>setLoadMore(true)}/>
 				</>
 			)}
 		</main>

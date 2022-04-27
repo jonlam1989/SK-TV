@@ -11,8 +11,8 @@ const fetchTopTenMovies = async (id: string) => {
 	const data = await response.json();
 	return data;
 };
-const fetchTvSeries = async () => {
-	const response = await fetch(KOREAN_TV_SERIES);
+const fetchTvSeries = async (page: number) => {
+	const response = await fetch(`${KOREAN_TV_SERIES}&page=${page}`);
 	const data = await response.json();
 	return data;
 };
