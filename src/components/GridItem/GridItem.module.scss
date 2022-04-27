@@ -3,7 +3,7 @@
 .gridItemImage {
     width: 100%;
     border-radius: $border-radius;
-    transition: $transition;
+    transition: $fast-transition;
     cursor: pointer;
    
     &:hover {
