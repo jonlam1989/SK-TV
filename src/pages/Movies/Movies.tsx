@@ -4,7 +4,7 @@ import { Button, Grid, GridItem, HeroImage, Spinner } from '../../components';
 import useFetchMovies from '../../hooks/useFetchMovies';
 
 const Movies: React.FC = () => {
-	const { state, loading, error } = useFetchMovies();
+	const { state, loading, error, setLoadMore } = useFetchMovies();
 	console.log(state);
 
 	if (error) return <div>Something went wrong...</div>;
@@ -22,7 +22,7 @@ const Movies: React.FC = () => {
 					<Grid page='Movies'>
 						{state.results.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
 					</Grid>
-					<Button />
+					<Button callback={()=>setLoadMore(true)}/>
 				</>
 			)}
 		</main>

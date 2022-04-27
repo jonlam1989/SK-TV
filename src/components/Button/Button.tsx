@@ -1,8 +1,17 @@
 //Styles
 import styles from './Button.module.scss';
 
-const Button = () => {
-	return <div className={styles.button}>Load More</div>;
+//Types
+type Props = {
+	callback: () => void;
+};
+
+const Button: React.FC<Props> = ({ callback }) => {
+	return (
+		<div className={styles.button} onClick={callback}>
+			Load More
+		</div>
+	);
 };
 
 export default Button;

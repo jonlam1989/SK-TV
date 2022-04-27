@@ -1,7 +1,7 @@
 import { KOREAN_MOVIES, KOREAN_TV_SERIES, KOREAN_TOP_TEN_MOVIES, KOREAN_TOP_TEN_SERIES } from './api_urls';
 
-const fetchMovies = async () => {
-	const response = await fetch(KOREAN_MOVIES);
+const fetchMovies = async (page: number) => {
+	const response = await fetch(`${KOREAN_MOVIES}&page=${page}`);
 	const data = await response.json();
 	return data;
 };

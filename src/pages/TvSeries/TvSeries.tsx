@@ -22,7 +22,7 @@ const TvSeries: React.FC = () => {
 					<Grid page='TV Series'>
 						{state.results.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
 					</Grid>
-					<Button />
+					<Button callback={()=>console.log('clicked')}/>
 				</>
 			)}
 		</main>
