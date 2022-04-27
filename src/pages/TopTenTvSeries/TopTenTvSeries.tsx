@@ -13,11 +13,13 @@ const TopTenTvSeries: React.FC = () => {
 		<main>
 			{loading && <Spinner />}
 			{state[0] && (
-				<HeroImage backdrop_path={state[0].backdrop_path} title={state[0].name} overview={state[0].overview} />
+				<>
+					<HeroImage backdrop_path={state[0].backdrop_path} title={state[0].name} overview={state[0].overview} />
+					<Grid page='Top 10 TV Series'>
+						{state.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
+					</Grid>
+				</>
 			)}
-			<Grid page='Top 10 TV Series'>
-				{state.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
-			</Grid>
 		</main>
 	);
 };
