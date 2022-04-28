@@ -22,7 +22,12 @@ const Movies: React.FC = () => {
 					<Grid page='Movies'>
 						{state.results.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
 					</Grid>
-					<Button callback={()=>setLoadMore(true)}/>
+					{state.page < state.total_pages && (
+						loading 
+							? <Spinner replaceButton={true}/>
+							: <Button callback={()=>setLoadMore(true)}/>
+						)
+					}
 				</>
 			)}
 		</main>
