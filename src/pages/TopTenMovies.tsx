@@ -1,7 +1,7 @@
 //Components
-import { Grid, GridItem, HeroImage, Spinner } from '../../components';
+import { Grid, GridItem, HeroImage, Spinner } from '../components';
 //custom hook
-import useFetchTopTenMovies from '../../hooks/useFetchTopTenMovies';
+import useFetchTopTenMovies from '../hooks/useFetchTopTenMovies';
 
 const TopTenMovies: React.FC = () => {
 	const { state, loading, error } = useFetchTopTenMovies();

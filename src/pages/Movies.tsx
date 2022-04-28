@@ -1,10 +1,10 @@
 //Components
-import { Button, Grid, GridItem, HeroImage, Spinner } from '../../components';
+import { Button, Grid, GridItem, HeroImage, Spinner } from '../components';
 //custom hook
-import useFetchTvSeries from '../../hooks/useFetchTvSeries';
+import useFetchMovies from '../hooks/useFetchMovies';
 
-const TvSeries: React.FC = () => {
-	const { state, loading, error, setLoadMore } = useFetchTvSeries();
+const Movies: React.FC = () => {
+	const { state, loading, error, setLoadMore } = useFetchMovies();
 	console.log(state);
 
 	if (error) return <div>Something went wrong...</div>;
@@ -16,10 +16,10 @@ const TvSeries: React.FC = () => {
 				<>
 					<HeroImage
 						backdrop_path={state.results[0].backdrop_path}
-						title={state.results[0].name}
+						title={state.results[0].title}
 						overview={state.results[0].overview}
 					/>
-					<Grid page='TV Series'>
+					<Grid page='Movies'>
 						{state.results.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
 					</Grid>
 					{state.page < state.total_pages && (
@@ -34,4 +34,4 @@ const TvSeries: React.FC = () => {
 	);
 };
 
-export default TvSeries;
+export default Movies;
