@@ -4,8 +4,8 @@ import { Breadcrumb } from '../components';
 import { useParams } from 'react-router-dom';
 
 const Details = () => {
-	const { id } = useParams();
-	console.log(id);
+	const { type, id } = useParams();
+	console.log(type, id);
 
 	return (
 		<div>
