@@ -20,7 +20,7 @@ const Movies: React.FC = () => {
 						overview={state.results[0].overview}
 					/>
 					<Grid page='Movies'>
-						{state.results.map((movie) => <GridItem key={movie.id} poster_path={movie.poster_path} />)}
+						{state.results.map((movie) => <GridItem key={movie.id} id={movie.id} poster_path={movie.poster_path} />)}
 					</Grid>
 					{state.page < state.total_pages && (
 						loading 

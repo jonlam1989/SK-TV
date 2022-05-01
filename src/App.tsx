@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //Components
 import { Navbar } from './components';
-import { Movies, TvSeries, TopTenMovies, TopTenTvSeries } from './pages';
+import { Movies, TvSeries, TopTenMovies, TopTenTvSeries, Details } from './pages';
 
 const App: React.FC = () => {
 	return (
@@ -13,6 +13,7 @@ const App: React.FC = () => {
 				<Route path='/tv-series' element={<TvSeries />} />
 				<Route path='/top-ten-movies' element={<TopTenMovies />} />
 				<Route path='/top-ten-tv-series' element={<TopTenTvSeries />} />
+				<Route path='/:id' element={<Details />} />
 			</Routes>
 		</Router>
 	);
