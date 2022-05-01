@@ -19,12 +19,12 @@ const useFetchTopTenSeries = () => {
 			setError(false);
 
 			//use a temporary-data array to prevent multiple re-renders
-			//if had used setState((prev)=>[...prev, specificMovie]):
+			//if had used setState((prev)=>[...prev, specificTvSeries]):
 			//    -there would have been a re-render for each iteration in the for-loop
 			let tempData = [];
 			for (let imdbID of Object.values(imdbSeriesIds)) {
-				const specificMovie = await fetchTopTenSeries(imdbID);
-				tempData.push(specificMovie);
+				const specificTvSeries = await fetchTopTenSeries(imdbID);
+				tempData.push(specificTvSeries);
 			}
 			setState([ ...tempData ]);
 
@@ -35,7 +35,7 @@ const useFetchTopTenSeries = () => {
 		}
 	};
 
-	//get data once the movie page loads
+	//get data once the page loads
 	useEffect(() => {
 		getData();
 	}, []);

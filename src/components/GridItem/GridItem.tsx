@@ -1,11 +1,11 @@
-//Styles
-import styles from './GridItem.module.scss';
 //Routing
 import { Link } from 'react-router-dom';
-//API
-import { IMAGE_BASE_URL } from '../../api/api_urls';
+//Styles
+import styles from './GridItem.module.scss';
 //PNGs
 import default_poster from '../../assests/images/default_poster.png';
+//API
+import { IMAGE_BASE_URL } from '../../api/api_urls';
 
 //Types
 type Props = {

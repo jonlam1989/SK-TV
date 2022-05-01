@@ -30,7 +30,7 @@ const fetchTopTenSeries = async (id: string) => {
 	return results;
 };
 const fetchSpecificSelection = async (type: string, id: string) => {
-	const url = SPECIFIC_SELECTION.replace('{type}', `${type}`).replace('{id}', `${id}`);
+	const url = SPECIFIC_SELECTION.replace('{type}', type).replace('{id}', id);
 	const response = await fetch(url);
 	const data = await response.json();
 	return data;

@@ -35,7 +35,7 @@ const useFetchTopTenMovies = () => {
 		}
 	};
 
-	//get data once the movie page loads
+	//get data once the page loads
 	useEffect(() => {
 		getData();
 	}, []);
