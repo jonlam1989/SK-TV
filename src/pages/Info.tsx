@@ -1,7 +1,7 @@
 //Routing
 import { useParams } from 'react-router-dom';
 //Components
-import { Breadcrumb, Spinner } from '../components';
+import { Breadcrumb, Details, Spinner } from '../components';
 //custom hook
 import useFetchSpecificSelection from '../hooks/useFetchSpecificSelection';
 
@@ -16,6 +16,7 @@ const Info: React.FC = () => {
 		<main>
 			{loading && <Spinner />}
 			<Breadcrumb name={type === 'movie' ? state.title : state.name} />
+			<Details details={state} type={`${type}`} />
 		</main>
 	);
 };
