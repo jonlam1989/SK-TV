@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchSpecificSelection } from '../api/api';
 import { SpecificMovieType, SpecificTvSeriesType2 } from '../api/api_types';
 
-const initialState = {} as SpecificMovieType | SpecificTvSeriesType2;
+const initialState = {} as SpecificMovieType & SpecificTvSeriesType2;
 
 const useFetchSpecificSelection = (type: string, id: string) => {
 	const [ state, setState ] = useState(initialState);

@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.breadcrumbContainer {
+    color: $primary-text;
+    padding: 0 $spacing-lg;
+    line-height: $spacing-lg;
+    letter-spacing: 1px;
+
+    span {
+        padding-right: 0.25rem;
+    }
+
+    a:hover {
+        text-shadow: 0 0 0.05px;
+    }
+}

@@ -5,10 +5,8 @@ import { Breadcrumb, Spinner } from '../components';
 //custom hook
 import useFetchSpecificSelection from '../hooks/useFetchSpecificSelection';
 
-const Details: React.FC = () => {
+const Info: React.FC = () => {
 	const { type, id } = useParams();
-	console.log(type, id);
-
 	const { state, loading, error } = useFetchSpecificSelection(`${type}`, `${id}`);
 	console.log(state);
 
@@ -17,9 +15,9 @@ const Details: React.FC = () => {
 	return (
 		<main>
 			{loading && <Spinner />}
-			<Breadcrumb />
+			<Breadcrumb name={type === 'movie' ? state.title : state.name} />
 		</main>
 	);
 };
 
-export default Details;
+export default Info;
