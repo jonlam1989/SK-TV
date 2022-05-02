@@ -2,12 +2,15 @@
 import { useParams } from 'react-router-dom';
 //Components
 import { Breadcrumb, Details, Spinner } from '../components';
+//API
+import { MyParams } from '../api/api_types';
 //custom hook
 import useFetchSpecificSelection from '../hooks/useFetchSpecificSelection';
 
 const Info: React.FC = () => {
-	const { type, id } = useParams();
-	const { state, loading, error } = useFetchSpecificSelection(`${type}`, `${id}`);
+	//used MyParams to prevent returning 'string | undefined'
+	const { type, id } = useParams() as MyParams;
+	const { state, loading, error } = useFetchSpecificSelection(type, id);
 	console.log(state);
 
 	if (error) return <div>Something went wrong...</div>;
@@ -16,7 +19,7 @@ const Info: React.FC = () => {
 		<main>
 			{loading && <Spinner />}
 			<Breadcrumb name={type === 'movie' ? state.title : state.name} />
-			<Details details={state} type={`${type}`} />
+			<Details details={state} type={type} />
 		</main>
 	);
 };

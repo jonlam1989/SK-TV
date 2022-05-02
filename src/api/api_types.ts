@@ -113,3 +113,9 @@ export type SpecificTvSeriesType2 = {
 	vote_average: number;
 	vote_count: number;
 };
+
+//for useParams
+export type MyParams = {
+	type: string;
+	id: string;
+};
