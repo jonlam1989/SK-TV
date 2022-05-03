@@ -10,7 +10,7 @@ type Props = {
 const Grid: React.FC<Props> = ({ page, children }) => {
 	return (
 		<div className={styles.gridContainer}>
-			<div>
+			<div className={styles.gridHeader}>
 				<p>{page}</p>
 				<small>(from South Korea)</small>
 			</div>

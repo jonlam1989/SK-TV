@@ -2,6 +2,7 @@
 
 .breadcrumbContainer {
     color: $primary-text;
+    font-size: $font-size-sm;
     padding: 0 $spacing-lg;
     line-height: $spacing-lg;
     letter-spacing: 1px;
@@ -10,7 +11,11 @@
         padding-right: 0.25rem;
     }
 
+    span:nth-child(3) {
+        text-shadow: $light-shadow;
+    }
+
     a:hover {
-        text-shadow: 0 0 0.05px;
+        text-shadow: 0 0 1px;
     }
 }

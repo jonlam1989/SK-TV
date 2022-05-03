@@ -18,7 +18,7 @@ const HeroImage: React.FC<Props> = ({ backdrop_path, title, overview }) => {
 	useEffect(
 		() => {
 			if (containerRef.current) {
-				containerRef.current.style.background = `url(${IMAGE_BASE_URL}/${backdrop_path})`;
+				containerRef.current.style.background = `url(${IMAGE_BASE_URL}${backdrop_path})`;
 				containerRef.current.style.backgroundPosition = `center`;
 				containerRef.current.style.backgroundSize = `cover`;
 				containerRef.current.style.filter = 'brightness(0.9)';

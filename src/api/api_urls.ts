@@ -11,7 +11,7 @@ const KOREAN_TOP_TEN_SERIES: string = `${API_BASE_URL}/find/{id}?api_key=${API_K
 const SPECIFIC_SELECTION: string = `${API_BASE_URL}/{type}/{id}?api_key=${API_KEY}`;
 
 //URL for images
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w1280/';
+const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w1280';
 
 export {
 	KOREAN_MOVIES,

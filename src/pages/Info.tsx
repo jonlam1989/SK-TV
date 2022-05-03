@@ -18,8 +18,21 @@ const Info: React.FC = () => {
 	return (
 		<main>
 			{loading && <Spinner />}
-			<Breadcrumb name={type === 'movie' ? state.title : state.name} />
-			<Details details={state} type={type} />
+			{state && (
+				<>
+					<Breadcrumb name={type === 'movie' ? state.title : state.name} />
+					<Details
+						poster_path={state.poster_path}
+						overview={state.overview}
+						genres={state.genres}
+						score={state.vote_average}
+						name={type === 'movie' ? state.title : state.name}
+						date={type === 'movie' ? state.release_date : state.last_air_date}
+						runtime={type === 'movie' ? state.runtime : undefined}
+						status={type === 'tv' ? state.status : undefined}
+					/>
+				</>
+			)}
 		</main>
 	);
 };

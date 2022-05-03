@@ -24,7 +24,7 @@ const GridItem: React.FC<Props> = ({ id, poster_path, type }) => {
 		<Link to={`/${type}/${id}`}>
 			<img
 				className={styles.gridItemImage}
-				src={`${IMAGE_BASE_URL}/${poster_path}`}
+				src={`${IMAGE_BASE_URL}${poster_path}`}
 				alt='poster'
 				onError={imgOnErrorHandler}
 			/>
