@@ -4,6 +4,8 @@ import styles from './Details.module.scss';
 import default_poster from '../../assests/images/default_poster.png';
 //API
 import { IMAGE_BASE_URL } from '../../api/api_urls';
+//helpers
+import convertTime from '../../helpers/helpers';
 
 //Types
 type Props = {
@@ -50,7 +52,7 @@ const Details: React.FC<Props> = ({ poster_path, overview, genres, score, name, 
 				{runtime && (
 					<div>
 						<h3>Runtime</h3>
-						<p>{runtime}</p>
+						<p>{convertTime(runtime)}</p>
 					</div>
 				)}
 				{status && (
