@@ -9,11 +9,11 @@ const App: React.FC = () => {
 		<Router>
 			<Navbar />
 			<Routes>
-				<Route path='/' element={<Movies />} />
-				<Route path='/tv-series' element={<TvSeries />} />
-				<Route path='/top-ten-movies' element={<TopTenMovies />} />
-				<Route path='/top-ten-tv-series' element={<TopTenTvSeries />} />
-				<Route path='/:type/:id' element={<Info />} />
+				<Route path='/sk-tv' element={<Movies />} />
+				<Route path='/sk-tv/tv-series' element={<TvSeries />} />
+				<Route path='/sk-tv/top-ten-movies' element={<TopTenMovies />} />
+				<Route path='/sk-tv/top-ten-tv-series' element={<TopTenTvSeries />} />
+				<Route path='/sk-tv/:type/:id' element={<Info />} />
 				<Route path='/*' element={<NotFound />} />
 			</Routes>
 		</Router>

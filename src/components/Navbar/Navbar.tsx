@@ -31,16 +31,16 @@ const Navbar: React.FC = () => {
 	const menu: JSX.Element = (
 		<ul className={styles.navMenuContent} ref={menuContentRef}>
 			<li>
-				<NavLink to='/'>Movies</NavLink>
+				<NavLink to='/sk-tv'>Movies</NavLink>
 			</li>
 			<li>
-				<NavLink to='/top-ten-movies'>Top 10 Movies</NavLink>
+				<NavLink to='/sk-tv/top-ten-movies'>Top 10 Movies</NavLink>
 			</li>
 			<li>
-				<NavLink to='/tv-series'>TV Series</NavLink>
+				<NavLink to='/sk-tv/tv-series'>TV Series</NavLink>
 			</li>
 			<li>
-				<NavLink to='/top-ten-tv-series'>Top 10 TV Series</NavLink>
+				<NavLink to='/sk-tv/top-ten-tv-series'>Top 10 TV Series</NavLink>
 			</li>
 		</ul>
 	);

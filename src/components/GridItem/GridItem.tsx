@@ -21,7 +21,7 @@ const GridItem: React.FC<Props> = ({ id, poster_path, type }) => {
 	};
 
 	return (
-		<Link to={`/${type}/${id}`}>
+		<Link to={`/sk-tv/${type}/${id}`}>
 			<img
 				className={styles.gridItemImage}
 				src={`${IMAGE_BASE_URL}${poster_path}`}
