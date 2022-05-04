@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/sk-tv/static/css/main.706ccef6.css",
+    "main.js": "/sk-tv/static/js/main.04abdb63.js",
+    "index.html": "/sk-tv/index.html",
+    "static/media/tv_icon.svg": "/sk-tv/static/media/tv_icon.e2b44a0f082f23eff0e8fdc92c0699ed.svg",
+    "main.706ccef6.css.map": "/sk-tv/static/css/main.706ccef6.css.map",
+    "main.04abdb63.js.map": "/sk-tv/static/js/main.04abdb63.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.706ccef6.css",
+    "static/js/main.04abdb63.js"
+  ]
+}
