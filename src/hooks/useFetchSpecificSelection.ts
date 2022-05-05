@@ -10,26 +10,30 @@ const useFetchSpecificSelection = (type: string, id: string) => {
 	const [ loading, setLoading ] = useState(false);
 	const [ error, setError ] = useState(false);
 
-	//either store data from api in state or throw an error
-	const getData = async () => {
-		try {
-			setLoading(true);
-			setError(false);
+	useEffect(
+		() => {
+			//either store data from api in state or throw an error
+			//placed getData fn inside useEffect to prevent infinite loop/re-renders
+			const getData = async () => {
+				try {
+					setLoading(true);
+					setError(false);
 
-			const data = await fetchSpecificSelection(type, id);
-			setState({ ...data });
+					const data = await fetchSpecificSelection(type, id);
+					setState({ ...data });
 
-			setLoading(false);
-		} catch (error) {
-			setError(true);
-			setLoading(false);
-		}
-	};
+					setLoading(false);
+				} catch (error) {
+					setError(true);
+					setLoading(false);
+				}
+			};
 
-	//get data once the page loads
-	useEffect(() => {
-		getData();
-	}, []);
+			//get data once the page loads
+			getData();
+		},
+		[ type, id ]
+	);
 
 	return { state, loading, error };
 };
