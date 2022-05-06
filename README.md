@@ -17,6 +17,9 @@ A simplified version/clone of IMDb, but with the goal of introducing people to g
 - SASS
 - Typescript
 - React(functional components)
+
+## APIs
+
 - TMDB API
 
 ## Tools
