@@ -4,11 +4,12 @@
 
 ## Description
 
-A simplified version/clone of IMDb, but with the goal of introducing people to great movies and tv-shows from South Korea
+A simplified version of IMDb, but with the goal of introducing people to great movies and tv-shows from South Korea
 
 ## Features
 
 - Mobile-first-approach
+
 - Minimalist design
 
 ## Screenshots
