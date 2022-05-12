@@ -10,26 +10,26 @@ import useFetchSpecificSelection from '../hooks/useFetchSpecificSelection';
 const Info: React.FC = () => {
 	//used MyParams to prevent returning 'string | undefined'
 	const { type, id } = useParams() as MyParams;
-	const { state, loading, error } = useFetchSpecificSelection(type, id);
-	console.log(state);
+	const { data, error, isLoading } = useFetchSpecificSelection(type, id);
+	console.log(data);
 
 	if (error) return <div>Something went wrong...</div>;
 
 	return (
 		<main>
-			{loading && <Spinner />}
-			{state && (
+			{isLoading && <Spinner />}
+			{data && (
 				<>
-					<Breadcrumb name={type === 'movie' ? state.title : state.name} />
+					<Breadcrumb name={type === 'movie' ? data.title : data.name} />
 					<Details
-						poster_path={state.poster_path}
-						overview={state.overview}
-						genres={state.genres}
-						score={state.vote_average}
-						name={type === 'movie' ? state.title : state.name}
-						date={type === 'movie' ? state.release_date : state.last_air_date}
-						runtime={type === 'movie' ? state.runtime : undefined}
-						status={type === 'tv' ? state.status : undefined}
+						poster_path={data.poster_path}
+						overview={data.overview}
+						genres={data.genres}
+						score={data.vote_average}
+						name={type === 'movie' ? data.title : data.name}
+						date={type === 'movie' ? data.release_date : data.last_air_date}
+						runtime={type === 'movie' ? data.runtime : undefined}
+						status={type === 'tv' ? data.status : undefined}
 					/>
 				</>
 			)}
