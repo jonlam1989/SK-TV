@@ -19,7 +19,7 @@ const TvSeries: React.FC = () => {
 						title={state.results[0].name}
 						overview={state.results[0].overview}
 					/>
-					<Grid page='TV Series'>
+					<Grid currPage='TV Series'>
 						{state.results.map((tv) => 
 							<GridItem 
 								key={tv.id} 

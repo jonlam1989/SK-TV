@@ -3,15 +3,15 @@ import styles from './Grid.module.scss';
 
 //Types
 type Props = {
-	page: string;
+	currPage: string;
 	children: React.ReactNode;
 };
 
-const Grid: React.FC<Props> = ({ page, children }) => {
+const Grid: React.FC<Props> = ({ currPage, children }) => {
 	return (
 		<div className={styles.gridContainer}>
 			<div className={styles.gridHeader}>
-				<p>{page}</p>
+				<p>{currPage}</p>
 				<small>(from South Korea)</small>
 			</div>
 			<div className={styles.gridContent}>{children}</div>

@@ -7,8 +7,8 @@ import {
 	SPECIFIC_SELECTION
 } from './api_urls';
 
-const fetchMovies = async (page: number) => {
-	const response = await axios.get(`${KOREAN_MOVIES}&page=${page}`);
+const fetchMovies = async ({ pageParam = 1 }) => {
+	const response = await axios.get(`${KOREAN_MOVIES}&page=${pageParam}`);
 	return response.data;
 };
 const fetchTopTenMovies = async (id: string) => {

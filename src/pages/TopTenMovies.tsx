@@ -19,7 +19,7 @@ const TopTenMovies: React.FC = () => {
 						title={state[0].title} 
 						overview={state[0].overview} 
 					/>
-					<Grid page='Top 10 Movies'>
+					<Grid currPage='Top 10 Movies'>
 						{state.map((movie) => 
 							<GridItem 
 								key={movie.id} 
