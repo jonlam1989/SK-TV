@@ -16,8 +16,8 @@ const fetchTopTenMovies = async (id: string) => {
 	const response = await axios.get(url);
 	return response.data;
 };
-const fetchTvSeries = async (page: number) => {
-	const response = await axios.get(`${KOREAN_TV_SERIES}&page=${page}`);
+const fetchTvSeries = async ({ pageParam = 1 }) => {
+	const response = await axios.get(`${KOREAN_TV_SERIES}&page=${pageParam}`);
 	return response.data;
 };
 const fetchTopTenSeries = async (id: string) => {
