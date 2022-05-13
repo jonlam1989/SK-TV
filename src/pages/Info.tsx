@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 //Routing
 import { useParams } from 'react-router-dom';
 //Components
@@ -12,6 +13,11 @@ const Info: React.FC = () => {
 	const { type, id } = useParams() as MyParams;
 	const { data, error, isLoading } = useFetchSpecificSelection(type, id);
 	console.log(data);
+
+	//when page loads, have page automatically scroll to the top
+	useEffect(()=>{
+		window.scrollTo(0, 0)
+	}, [])
 
 	if (error) return <div>Something went wrong...</div>;
 
