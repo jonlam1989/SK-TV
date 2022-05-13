@@ -12,6 +12,11 @@ A simplified version of IMDb, but with the goal of introducing people to great m
 
 - Minimalist design
 
+- Caching (via React Query)
+    - for decreasing application load times
+    
+    - for better user experience    
+
 ## Screenshots
 
 ### Mobile
@@ -45,4 +50,5 @@ A simplified version of IMDb, but with the goal of introducing people to great m
 ## Tools
 
 - React Router(v6) - Client side routing
+- React Query(v3) - Server state management
 - GitHub Pages - Hosting
