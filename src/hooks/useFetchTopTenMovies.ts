@@ -2,10 +2,12 @@
 import { useQueries } from 'react-query';
 //API
 import { fetchTopTenMovies } from '../api/api';
-//data
-import { imdbMovieIds } from '../data/topTenMoviesList';
+//custom hook
+import { useGlobalContext } from '../context/context';
 
 const useFetchTopTenMovies = () => {
+	const { imdbMovieIds } = useGlobalContext();
+
 	return useQueries(
 		Object.values(imdbMovieIds).map((id) => {
 			return {
