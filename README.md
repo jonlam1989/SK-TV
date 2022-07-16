@@ -51,4 +51,5 @@ A simplified version of IMDb, but with the goal of introducing people to great m
 
 - React Router(v6) - Client side routing
 - React Query(v3) - Server state management
-- GitHub Pages - Hosting
+- GitHub Pages - Hosting frontend
+- Heroku - Hosting backend (Backend repo: https://github.com/jonlam1989/sk-tv-rest-api)
