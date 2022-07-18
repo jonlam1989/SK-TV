@@ -3,8 +3,19 @@
 .gridContainer {
     .gridHeader {
         color: $primary-text;
+        display: grid;
+        
+        @include for-size(phone-and-up) {
+            grid-template-columns: 1fr;
+        }
+        @include for-size(tablet-and-up) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include for-size(desktop-and-up) {
+            grid-template-columns: 2fr 1fr;
+        }
 
-        p {
+        p, a {
             margin: 1rem 2rem 0rem;
             font-size: $font-size-sm;
             font-weight: 800;
@@ -19,12 +30,40 @@
         }
     
         small {
-            margin-left: 3rem;
             letter-spacing: 3px;
     
             @include for-size(tablet-and-up) {
                 margin-left: 6rem;
             }
+        }
+
+        a {
+            display: grid;
+            justify-items: center;
+            
+            padding: $spacing-sm;
+            font-size: $font-size-sm;
+            background: $primary-button;
+            border: transparent;
+            border-radius: $border-radius;
+            transition: $fast-transition;
+        
+            &:hover {
+                font-weight: 600;
+                color: $primary-button;
+                background: $secondary-button;
+                text-shadow: 1px 2px 4px rgb(61, 59, 59, 0.5);
+            }
+        }
+
+    }
+
+    .gridInfo {
+        display: grid;
+        justify-items: center;
+
+        @include for-size(tablet-and-up) {
+            justify-items: start;
         }
     }
 }

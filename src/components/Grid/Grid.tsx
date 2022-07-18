@@ -1,3 +1,5 @@
+//Routing
+import { Link } from 'react-router-dom';
 //Styles
 import styles from './Grid.module.scss';
 
@@ -11,8 +13,13 @@ const Grid: React.FC<Props> = ({ currPage, children }) => {
 	return (
 		<div className={styles.gridContainer}>
 			<div className={styles.gridHeader}>
-				<p>{currPage}</p>
-				<small>(from South Korea)</small>
+				<div className={styles.gridInfo}>
+					<p>{currPage}</p>
+					<small>(from South Korea)</small>
+				</div>
+				<div>
+					<Link to={'/sk-tv/community'}>COMMUNITY</Link>
+				</div>
 			</div>
 			<div className={styles.gridContent}>{children}</div>
 		</div>
