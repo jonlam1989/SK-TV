@@ -5,7 +5,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //Components
 import { Navbar } from './components';
-import { Movies, TvSeries, TopTenMovies, TopTenTvSeries, Info, NotFound } from './pages';
+import { Movies, TvSeries, TopTenMovies, TopTenTvSeries, Info, Community, NotFound } from './pages';
 
 const queryClient = new QueryClient();
 
@@ -20,6 +20,7 @@ const App: React.FC = () => {
 					<Route path='/sk-tv/top-ten-movies' element={<TopTenMovies />} />
 					<Route path='/sk-tv/top-ten-tv-series' element={<TopTenTvSeries />} />
 					<Route path='/sk-tv/:type/:id' element={<Info />} />
+					<Route path='/sk-tv/community' element={<Community />} />
 					<Route path='/*' element={<NotFound />} />
 				</Routes>
 			</Router>

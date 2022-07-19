@@ -6,3 +6,4 @@ export { default as GridItem } from './GridItem/GridItem';
 export { default as Button } from './Button/Button';
 export { default as Breadcrumb } from './Breadcrumb/Breadcrumb';
 export { default as Details } from './Details/Details';
+export { default as Join } from './Join/Join';
