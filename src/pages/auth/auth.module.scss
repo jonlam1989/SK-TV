@@ -47,5 +47,11 @@
         input {
             width: 250px;
         }
+        button {
+            margin-right: $spacing-lg;
+        }
+        a {
+            margin-left: $spacing-lg;
+        }
     }
 }

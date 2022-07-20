@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 //Styles
 import styles from './auth.module.scss';
 
-const Signup = () => {
+const Login = () => {
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
 	};
 
 	return (
 		<form className={styles.formContainer} onSubmit={handleSubmit}>
-			<h2>Sign Up!</h2>
+			<h2>Login</h2>
 
 			<div>
 				<label>Email</label>
@@ -30,4 +30,4 @@ const Signup = () => {
 	);
 };
 
-export default Signup;
+export default Login;
