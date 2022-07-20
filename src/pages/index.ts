@@ -5,3 +5,4 @@ export { default as TopTenTvSeries } from './TopTenTvSeries';
 export { default as Info } from './Info';
 export { default as Community } from './Community';
 export { default as NotFound } from './NotFound';
+export { default as Signup } from './auth/Signup';

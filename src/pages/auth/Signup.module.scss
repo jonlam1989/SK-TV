@@ -1,0 +1,51 @@
+@import '../../styles/variables.scss';
+
+.formContainer {
+    display: grid;
+    justify-items: center;
+    max-width: 350px;
+    margin: $spacing-lg auto;
+    padding: $spacing-lg;
+    background: #fff;
+    border-radius: $border-radius;
+
+    h2{
+        justify-self: start;
+    }
+    div {
+        margin: $spacing-sm 0;
+    }
+    label, input {
+        display: block;
+    }
+    input {
+        width: 200px;
+        height: 30px;
+        padding-left: 0.5rem;
+    }
+    button {
+        margin-right: $spacing-sm;
+        padding: $spacing-sm;
+        font-size: $font-size-sm;
+        color: $primary-text;
+        background: $primary-button;
+        border: transparent;
+        border-radius: $border-radius;
+        cursor: pointer;
+    }
+    a {
+        margin-left: $spacing-sm;
+        padding: $spacing-sm;
+        border: 2px solid $primary-button;
+        border-radius: $border-radius;
+        text-shadow: 1px 2px 4px rgb(61, 59, 59, 0.5);
+    }
+
+    @include for-size(phone-and-up) {
+        max-width: 400px;
+
+        input {
+            width: 250px;
+        }
+    }
+}
