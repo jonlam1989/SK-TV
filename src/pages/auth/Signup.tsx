@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import axios from 'axios';
 //Routing
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 //Styles
 import styles from './auth.module.scss';
 
@@ -8,11 +9,23 @@ const Signup = () => {
 	const [ name, setName ] = useState('');
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
+	const navigate = useNavigate();
 
-	const handleSubmit = (e: any) => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 
-		console.log(name, email, password);
+		try {
+			const response = await axios.post('https://sk-tv.herokuapp.com/auth/register', {
+				name,
+				email,
+				password
+			});
+			console.log(response);
+
+			navigate('/sk-tv/community', { replace: true });
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return (
