@@ -9,7 +9,7 @@ const Login = () => {
 	};
 
 	return (
-		<form className={styles.formContainer} onSubmit={handleSubmit}>
+		<form className={styles.loginFormContainer} onSubmit={handleSubmit}>
 			<h2>Login</h2>
 
 			<div>

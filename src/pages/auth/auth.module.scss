@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-.formContainer {
+form {
     display: grid;
     justify-items: center;
     max-width: 350px;
@@ -53,5 +53,17 @@
         a {
             margin-left: $spacing-lg;
         }
+    }
+}
+
+.signupFormContainer {
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+    div {
+        margin: 0.25rem 0;
+    }
+    button, a {
+        margin-top: 0.5rem;
     }
 }
