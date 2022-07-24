@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss';
+
+.dashboardContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: $spacing-lg;
+    padding: $spacing-lg;
+    color: $primary-text;
+    
+    @include for-size(tablet-and-up) {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .dashboardText {
+        h1{
+            text-transform: uppercase;
+        }
+        h1:nth-child(2) {
+            color: $primary-button;
+        }
+        p {
+            margin: $spacing-sm 0;
+        }
+
+       
+        @include for-size(phone-and-up) {
+            h1 {
+                font-size: 4rem;
+            }
+            p {
+                font-size: $font-size-sm;
+            }
+        }
+    }
+
+    hr {
+        margin: $spacing-lg 0;
+    }
+}
