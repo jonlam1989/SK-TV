@@ -22,7 +22,12 @@ const Signup = () => {
 			});
 			console.log(response);
 
-			navigate('/sk-tv/community', { replace: true });
+			const { token, user } = response.data;
+			if (user) {
+				localStorage.setItem('token', token);
+				localStorage.setItem('user_name', user.name);
+				navigate('/sk-tv/community', { replace: true });
+			}
 		} catch (error) {
 			console.log(error);
 		}
