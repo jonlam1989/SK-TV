@@ -33,6 +33,35 @@
         }
     }
 
+    .dashboardLogout {
+        display: grid;
+        place-items: center;
+
+        button {
+            padding: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: black;
+            background: $primary-button;
+            border: transparent;
+            border-radius: $border-radius;
+            transition: $fast-transition;
+            cursor: pointer;
+        
+            &:hover {
+                color: $primary-text;
+            }
+        }
+
+        @include for-size(tablet-and-up) {
+            button {
+                padding: $spacing-sm;
+                font-size: $font-size-sm;
+            }
+        }
+    }
+
     hr {
         margin: $spacing-lg 0;
     }
