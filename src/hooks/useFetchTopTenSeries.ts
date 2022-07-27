@@ -3,10 +3,10 @@ import { useQueries } from 'react-query';
 //API
 import { fetchTopTenSeries } from '../api/api';
 //custom hook
-import { useGlobalContext } from '../context/context';
+import { useTopTenContext } from '../context/topTenContext';
 
 const useFetchTopTenSeries = () => {
-	const { imdbSeriesIds } = useGlobalContext();
+	const { imdbSeriesIds } = useTopTenContext();
 
 	return useQueries(
 		Object.values(imdbSeriesIds).map((id) => {

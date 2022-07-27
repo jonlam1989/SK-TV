@@ -4,13 +4,13 @@ import './styles/index.scss';
 import App from './App';
 //Contexts
 import { AuthContextProvider } from './context/authContext';
-import { AppProvider } from './context/context';
+import { TopTenContextProvider } from './context/topTenContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
 	<AuthContextProvider>
-		<AppProvider>
+		<TopTenContextProvider>
 			<App />
-		</AppProvider>
+		</TopTenContextProvider>
 	</AuthContextProvider>
 );

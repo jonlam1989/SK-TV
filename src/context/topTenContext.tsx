@@ -10,11 +10,11 @@ type IMDBContextValue = {
 	imdbSeriesIds: IMDBObject;
 };
 
-const AppContext = createContext<IMDBContextValue>({
+const TopTenContext = createContext<IMDBContextValue>({
 	imdbMovieIds: {},
 	imdbSeriesIds: {}
 });
-const AppProvider = ({ children }: any) => {
+const TopTenContextProvider = ({ children }: any) => {
 	const [ imdbMovieIds, setImdbMovieIds ] = useState<IMDBObject>({});
 	const [ imdbSeriesIds, setImdbSeriesIds ] = useState<IMDBObject>({});
 
@@ -45,10 +45,10 @@ const AppProvider = ({ children }: any) => {
 		getImdbSeriesIds();
 	}, []);
 
-	return <AppContext.Provider value={{ imdbMovieIds, imdbSeriesIds }}>{children}</AppContext.Provider>;
+	return <TopTenContext.Provider value={{ imdbMovieIds, imdbSeriesIds }}>{children}</TopTenContext.Provider>;
 };
 
 //custom hook
-const useGlobalContext = () => useContext(AppContext);
+const useTopTenContext = () => useContext(TopTenContext);
 
-export { AppProvider, useGlobalContext };
+export { TopTenContextProvider, useTopTenContext };
