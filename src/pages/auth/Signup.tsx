@@ -4,11 +4,14 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 //Styles
 import styles from './auth.module.scss';
+//Context
+import { useAuthContext } from '../../context/authContext';
 
 const Signup = () => {
 	const [ name, setName ] = useState('');
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
+	const { login } = useAuthContext();
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e: any) => {
@@ -25,7 +28,7 @@ const Signup = () => {
 			const { token, user } = response.data;
 			if (user) {
 				localStorage.setItem('token', token);
-				localStorage.setItem('user_name', user.name);
+				login(user);
 				navigate('/sk-tv/community', { replace: true });
 			}
 		} catch (error) {

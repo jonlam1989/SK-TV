@@ -1,13 +1,16 @@
 //Components
 import { Dashboard, Join } from '../components';
+//Context
+import { useAuthContext } from '../context/authContext';
 
 const Community = () => {
-	const user_name = localStorage.getItem('user_name');
+	const { user } = useAuthContext();
+	console.log(user);
 
 	return (
 		<div>
-			{user_name && <Dashboard />}
-			{!user_name && <Join />}
+			{!user && <Join />}
+			{user?.name && <Dashboard />}
 		</div>
 	);
 };
