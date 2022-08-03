@@ -7,6 +7,7 @@ const Dashboard = () => {
 	const { user, logout } = useAuthContext();
 
 	const logoutUser = () => {
+		localStorage.removeItem('token')
 		logout()
 	};
 
