@@ -10,7 +10,7 @@ const Community = () => {
 	return (
 		<div>
 			{!user && <Join />}
-			{user?.name && <Dashboard />}
+			{user && <Dashboard />}
 		</div>
 	);
 };

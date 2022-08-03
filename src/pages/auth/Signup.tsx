@@ -27,7 +27,7 @@ const Signup = () => {
 
 			const { token, user } = response.data;
 			if (user) {
-				localStorage.setItem('token', token);
+				localStorage.setItem('user', JSON.stringify({ user, token }));
 				login(user);
 				navigate('/sk-tv/community', { replace: true });
 			}
