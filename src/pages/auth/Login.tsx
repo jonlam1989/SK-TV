@@ -1,37 +1,19 @@
 import { useState } from 'react';
-import axios from 'axios';
 //Routing
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 //Styles
 import styles from './auth.module.scss';
-//Context
-import { useAuthContext } from '../../context/authContext';
+//Hooks
+import useLogin from '../../hooks/useLogin';
 
 const Login = () => {
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
-	const { login } = useAuthContext();
-	const navigate = useNavigate();
+	const { loginUser } = useLogin();
 
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
-
-		try {
-			const response = await axios.post('https://sk-tv.herokuapp.com/auth/login', {
-				email,
-				password
-			});
-			console.log(response);
-
-			const { token, user } = response.data;
-			if (user) {
-				localStorage.setItem('user', JSON.stringify({ user, token }));
-				login(user);
-				navigate('/sk-tv/community', { replace: true });
-			}
-		} catch (error) {
-			console.log(error);
-		}
+		loginUser(email, password);
 	};
 
 	return (

@@ -10,11 +10,11 @@ const Signup = () => {
 	const [ name, setName ] = useState('');
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
-	const { signup } = useSignup();
+	const { signupUser } = useSignup();
 
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
-		signup(name, email, password);
+		signupUser(name, email, password);
 	};
 
 	return (

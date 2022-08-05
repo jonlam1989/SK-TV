@@ -4,14 +4,13 @@ import { useNavigate } from 'react-router-dom';
 //Context
 import { useAuthContext } from '../context/authContext';
 
-const useSignup = () => {
-	const navigate = useNavigate();
+const useLogin = () => {
 	const { login } = useAuthContext();
+	const navigate = useNavigate();
 
-	const signupUser = async (name: string, email: string, password: string) => {
+	const loginUser = async (email: string, password: string) => {
 		try {
-			const response = await axios.post('https://sk-tv.herokuapp.com/auth/register', {
-				name,
+			const response = await axios.post('https://sk-tv.herokuapp.com/auth/login', {
 				email,
 				password
 			});
@@ -28,7 +27,7 @@ const useSignup = () => {
 		}
 	};
 
-	return { signupUser };
+	return { loginUser };
 };
 
-export default useSignup;
+export default useLogin;
