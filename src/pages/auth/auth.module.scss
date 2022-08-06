@@ -1,69 +1,75 @@
 @import '../../styles/variables.scss';
 
 form {
-    display: grid;
-    justify-items: center;
-    max-width: 350px;
-    margin: $spacing-lg auto;
-    padding: $spacing-lg;
-    background: #fff;
-    border-radius: $border-radius;
+	display: grid;
+	justify-items: center;
+	max-width: 350px;
+	margin: $spacing-lg auto;
+	padding: $spacing-lg;
+	background: #fff;
+	border-radius: $border-radius;
 
-    h2{
-        justify-self: start;
-    }
-    div {
-        margin: $spacing-sm 0;
-    }
-    label, input {
-        display: block;
-    }
-    input {
-        width: 200px;
-        height: 30px;
-        padding-left: 0.5rem;
-    }
-    button {
-        margin-right: $spacing-sm;
-        padding: $spacing-sm;
-        font-size: $font-size-sm;
-        color: $primary-text;
-        background: $primary-button;
-        border: transparent;
-        border-radius: $border-radius;
-        cursor: pointer;
-    }
-    a {
-        margin-left: $spacing-sm;
-        padding: $spacing-sm;
-        border: 2px solid $primary-button;
-        border-radius: $border-radius;
-        text-shadow: 1px 2px 4px rgb(61, 59, 59, 0.5);
-    }
+	h2 {
+		justify-self: start;
+	}
+	div {
+		margin: $spacing-sm 0;
+	}
+	label,
+	input {
+		display: block;
+	}
+	input {
+		width: 200px;
+		height: 30px;
+		padding-left: 0.5rem;
+	}
+	button {
+		margin-right: $spacing-sm;
+		padding: $spacing-sm;
+		font-size: $font-size-sm;
+		color: $primary-text;
+		background: $primary-button;
+		border: transparent;
+		border-radius: $border-radius;
+		cursor: pointer;
+	}
+	a {
+		margin-left: $spacing-sm;
+		padding: $spacing-sm;
+		border: 2px solid $primary-button;
+		border-radius: $border-radius;
+		text-shadow: 1px 2px 4px rgb(61, 59, 59, 0.5);
+	}
+	.error {
+		padding-top: $spacing-sm;
+		color: $primary-button;
+	}
 
-    @include for-size(phone-and-up) {
-        max-width: 400px;
+	@include for-size(phone-and-up) {
+		max-width: 400px;
 
-        input {
-            width: 250px;
-        }
-        button {
-            margin-right: $spacing-lg;
-        }
-        a {
-            margin-left: $spacing-lg;
-        }
-    }
+		input {
+			width: 250px;
+		}
+		button {
+			margin-right: $spacing-lg;
+		}
+		a {
+			margin-left: $spacing-lg;
+		}
+	}
 }
 
 .signupFormContainer {
-    h2 {
-        margin-bottom: 0.5rem;
-    }
-    div {
-        margin: 0.25rem 0;
-    }
-    button, a {
-        margin-top: 0.5rem;
-    }
+	h2 {
+		margin-bottom: 0.5rem;
+	}
+	div {
+		margin: 0.25rem 0;
+	}
+	button,
+	a {
+		margin-top: 0.5rem;
+	}
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //Routing
 import { Link } from 'react-router-dom';
 //Styles
@@ -10,12 +10,19 @@ const Signup = () => {
 	const [ name, setName ] = useState('');
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
-	const { signupUser } = useSignup();
+	const { signupUser, error } = useSignup();
 
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 		signupUser(name, email, password);
 	};
+
+	useEffect(
+		() => {
+			if (error) console.log(error.error_message);
+		},
+		[ error ]
+	);
 
 	return (
 		<form className={styles.signupFormContainer} onSubmit={handleSubmit}>
@@ -40,6 +47,8 @@ const Signup = () => {
 				<button type='submit'>Submit</button>
 				<Link to={-1 as any}>Go back</Link>
 			</div>
+
+			{error && <div className={styles.error}>{error.error_message}</div>}
 		</form>
 	);
 };
