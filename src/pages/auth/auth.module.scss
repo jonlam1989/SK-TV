@@ -42,7 +42,7 @@ form {
 		text-shadow: 1px 2px 4px rgb(61, 59, 59, 0.5);
 	}
 	.error {
-		padding-top: $spacing-sm;
+		margin: 0.25rem 0;
 		color: $primary-button;
 	}
 
@@ -71,5 +71,9 @@ form {
 	button,
 	a {
 		margin-top: 0.5rem;
+	}
+	.error {
+		margin: 0;
+		padding-top: $spacing-sm;
 	}
 }

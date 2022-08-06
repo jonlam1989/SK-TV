@@ -1,12 +1,20 @@
-import axios from 'axios';
+import { useState } from 'react';
+import axios, { AxiosError } from 'axios';
 //Routing
 import { useNavigate } from 'react-router-dom';
 //Context
 import { useAuthContext } from '../context/authContext';
 
+//Types
+type ErrorObject = {
+	status: string;
+	error_message: string;
+};
+
 const useLogin = () => {
 	const { login } = useAuthContext();
 	const navigate = useNavigate();
+	const [ error, setError ] = useState<ErrorObject>();
 
 	const loginUser = async (email: string, password: string) => {
 		try {
@@ -23,11 +31,20 @@ const useLogin = () => {
 				navigate('/sk-tv/community', { replace: true });
 			}
 		} catch (error) {
-			console.log(error);
+			//resource:
+			//https://hashnode.com/post/how-to-use-axios-with-typescript-ckqi62md803s28us1baqyaj4u
+			if (axios.isAxiosError(error)) {
+				const serverError = error as AxiosError;
+				let msg: any;
+				if (serverError && serverError.response) {
+					msg = serverError.response.data;
+				}
+				setError(msg);
+			}
 		}
 	};
 
-	return { loginUser };
+	return { loginUser, error };
 };
 
 export default useLogin;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //Routing
 import { Link } from 'react-router-dom';
 //Styles
@@ -9,12 +9,19 @@ import useLogin from '../../hooks/useLogin';
 const Login = () => {
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
-	const { loginUser } = useLogin();
+	const { loginUser, error } = useLogin();
 
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 		loginUser(email, password);
 	};
+
+	useEffect(
+		() => {
+			if (error) console.log(error.error_message);
+		},
+		[ error ]
+	);
 
 	return (
 		<form className={styles.loginFormContainer} onSubmit={handleSubmit}>
@@ -34,6 +41,8 @@ const Login = () => {
 				<button type='submit'>Submit</button>
 				<Link to={-1 as any}>Go back</Link>
 			</div>
+
+			{error && <div className={styles.error}>{error.error_message}</div>}
 		</form>
 	);
 };
