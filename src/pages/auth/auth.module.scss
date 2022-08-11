@@ -44,6 +44,7 @@ form {
 	.error {
 		margin: 0.25rem 0;
 		color: $primary-button;
+		text-align: center;
 	}
 
 	@include for-size(phone-and-up) {
