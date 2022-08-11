@@ -1,17 +1,22 @@
 //Components
-import { Dashboard, Join } from '../components';
+import { Join, Dashboard, Posts } from '../components';
 //Context
 import { useAuthContext } from '../context/authContext';
+//Hooks
+import useFetchPosts from '../hooks/useFetchPosts';
 
 const Community = () => {
 	const { user } = useAuthContext();
 	console.log(user);
+	const { state: data } = useFetchPosts();
+	console.log(data);
 
 	return (
-		<div>
+		<main>
 			{!user && <Join />}
 			{user && <Dashboard />}
-		</div>
+			<Posts />
+		</main>
 	);
 };
 
