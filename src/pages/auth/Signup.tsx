@@ -12,7 +12,7 @@ const Signup = () => {
 	const [ password, setPassword ] = useState('');
 	const { signupUser, error } = useSignup();
 
-	const handleSubmit = async (e: any) => {
+	const handleSubmit = (e: any) => {
 		e.preventDefault();
 		signupUser(name, email, password);
 	};

@@ -4,4 +4,9 @@
 	margin: $spacing-lg;
 	padding: $spacing-lg;
 	color: $primary-text;
+
+	h2 {
+		letter-spacing: 3px;
+		font-weight: 400;
+	}
 }

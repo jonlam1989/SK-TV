@@ -1,5 +1,5 @@
 //Components
-import { Join, Dashboard, Posts } from '../components';
+import { Join, Dashboard, Posts, PostItem, Spinner } from '../components';
 //Context
 import { useAuthContext } from '../context/authContext';
 //Hooks
@@ -7,15 +7,30 @@ import useFetchPosts from '../hooks/useFetchPosts';
 
 const Community = () => {
 	const { user } = useAuthContext();
-	console.log(user);
-	const { state: data } = useFetchPosts();
+	const { state: data, isLoading, error } = useFetchPosts();
 	console.log(data);
+
+	if (error) return <div>Something went wrong...</div>;
 
 	return (
 		<main>
 			{!user && <Join />}
 			{user && <Dashboard />}
-			<Posts />
+			
+			{isLoading && <Spinner/>}
+			{!isLoading && data?.posts && (
+				<Posts>
+					{data.posts.map((post) => (
+						<PostItem
+							key={post._id}
+							id={post._id}
+							createdAt={post.createdAt}
+							title={post.title}
+							text={post.text}
+						/>
+					))}
+				</Posts>
+			)}
 		</main>
 	);
 };

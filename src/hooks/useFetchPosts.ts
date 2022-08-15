@@ -6,6 +6,7 @@ type PostObj = {
 	author: string;
 	createdAt: string;
 	title: string;
+	text: string;
 	updatedAt: string;
 	__v: number;
 	_id: string;
@@ -17,23 +18,21 @@ type DataObj = {
 
 const useFetchPosts = () => {
 	const [ state, setState ] = useState<DataObj>();
-	const [ loading, setLoading ] = useState(false);
+	const [ isLoading, setIsLoading ] = useState(false);
 	const [ error, setError ] = useState(false);
 
 	const getData = async () => {
-		setLoading(true);
+		setIsLoading(true);
 		setError(false);
 
 		try {
 			const response = await axios.get('https://sk-tv.herokuapp.com/posts');
 			const data = response.data;
 			setState(data);
-
-			console.log('this is all the posts:');
-			console.log(data);
+			setIsLoading(false);
 		} catch (error) {
 			setError(true);
-			setLoading(false);
+			setIsLoading(false);
 		}
 	};
 
@@ -41,7 +40,7 @@ const useFetchPosts = () => {
 		getData();
 	}, []);
 
-	return { state, loading, error };
+	return { state, isLoading, error };
 };
 
 export default useFetchPosts;

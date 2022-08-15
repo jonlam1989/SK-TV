@@ -9,3 +9,4 @@ export { default as Details } from './Details/Details';
 export { default as Join } from './Join/Join';
 export { default as Dashboard } from './Dashboard/Dashboard';
 export { default as Posts } from './Posts/Posts';
+export { default as PostItem } from './PostItem/PostItem';

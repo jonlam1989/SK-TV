@@ -1,8 +1,18 @@
 //Styles
 import styles from './Posts.module.scss';
 
-const Posts = () => {
-	return <div className={styles.postsContainer}>All Posts</div>;
+//Types
+type Props = {
+	children: React.ReactNode;
+};
+
+const Posts: React.FC<Props> = ({ children }) => {
+	return (
+		<div className={styles.postsContainer}>
+			<h2>Popular Posts</h2>
+			<div className={styles.postsContent}>{children}</div>
+		</div>
+	);
 };
 
 export default Posts;
