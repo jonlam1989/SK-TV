@@ -1,88 +1,88 @@
 @import '../../styles/variables.scss';
 
 .joinContainer {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: $spacing-lg;
-    padding: $spacing-lg;
-    color: $primary-text;
-    
-    @include for-size(tablet-and-up) {
-        grid-template-columns: 1fr 1fr;
-    }
+	display: grid;
+	grid-template-columns: 1fr;
+	margin: $spacing-lg;
+	padding: $spacing-lg;
+	color: $primary-text;
 
-    .joinText {
-        h1:nth-child(2) {
-            color: $primary-button;
-        }
-        p {
-            margin: $spacing-sm 0;
-        }
+	@include for-size(tablet-and-up) {
+		grid-template-columns: 1fr 1fr;
+	}
 
-       
-        @include for-size(phone-and-up) {
-            h1 {
-                font-size: 4rem;
-            }
-            p {
-                font-size: $font-size-sm;
-            }
-        }
-    }
+	.joinText {
+		h1:nth-child(2) {
+			color: $primary-button;
+		}
+		p {
+			margin: $spacing-sm 0;
+		}
 
-    .joinButtons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: $spacing-sm;
-        align-content: center;
-        
-        @include for-size(desktop-and-up) {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
+		@include for-size(phone-and-up) {
+			h1 {
+				font-size: 4rem;
+			}
+			p {
+				font-size: $font-size-sm;
+			}
+		}
+	}
 
-            a:first-child {
-                grid-column: 2/3;
-            }
-            a:last-child {
-                grid-column: 4/5;
-            }
-        }
+	.joinButtons {
+		display: grid;
+		grid-template-columns: 125px 125px;
+		gap: $spacing-lg;
+		align-content: center;
+		justify-content: center;
 
-        a:first-child {
-            text-align: center;
-            padding: $spacing-sm;
-            font-size: $font-size-sm;
-            color: $primary-button;
-            border: 2px solid $primary-button;
-            border-radius: $border-radius;
-            transition: $fast-transition;
-        
-            &:hover {
-                font-weight: 600;
-                color: $secondary-button;
-                background: $primary-button;
-                text-shadow: 1px 2px 4px rgb(61, 59, 59, 0.5);
-            }
-        }
-        a:last-child {
-            text-align: center;
-            padding: $spacing-sm;
-            font-size: $font-size-sm;
-            background: $primary-button;
-            border: transparent;
-            border-radius: $border-radius;
-            transition: $fast-transition;
-        
-            &:hover {
-                font-weight: 600;
-                color: $primary-button;
-                background: $secondary-button;
-                text-shadow: 1px 2px 4px rgb(61, 59, 59, 0.5);
-            }
-        }
-    }
+		@include for-size(desktop-and-up) {
+			grid-template-columns: repeat(4, 1fr);
+			gap: 0;
 
-    hr {
-        margin: $spacing-lg 0;
-    }
+			a:first-child {
+				grid-column: 2/3;
+			}
+			a:last-child {
+				grid-column: 4/5;
+			}
+		}
+
+		a:first-child {
+			text-align: center;
+			padding: $spacing-sm;
+			font-size: $font-size-sm;
+			color: $primary-button;
+			border: 2px solid $primary-button;
+			border-radius: $border-radius;
+			transition: $fast-transition;
+
+			&:hover {
+				font-weight: 600;
+				color: $secondary-button;
+				background: $primary-button;
+				text-shadow: 1px 2px 4px rgb(61, 59, 59, 0.5);
+			}
+		}
+		a:last-child {
+			text-align: center;
+			padding: $spacing-sm;
+			font-size: $font-size-sm;
+			background: $primary-button;
+			border: transparent;
+			border-radius: $border-radius;
+			transition: $fast-transition;
+
+			&:hover {
+				font-weight: 600;
+				color: $primary-button;
+				background: $secondary-button;
+				text-shadow: 1px 2px 4px rgb(61, 59, 59, 0.5);
+			}
+		}
+	}
+
+	hr {
+		margin: $spacing-lg 0;
+	}
 }

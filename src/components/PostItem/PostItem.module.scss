@@ -1,5 +1,37 @@
 @import '../../styles/variables.scss';
 
 .postItemContainer {
-	margin: $spacing-lg 0;
+	display: grid;
+	margin: $spacing-sm 0;
+	padding: $spacing-sm 0;
+
+	@include for-size(phone-and-up) {
+		grid-template-columns: 50px 1fr;
+		max-width: 700px;
+		margin: $spacing-lg 0;
+		padding: $spacing-lg;
+	}
+
+	.postItemIcon {
+		svg {
+			font-size: $font-size-lg;
+			color: $primary-button;
+		}
+	}
+
+	.postItemContent {
+		font-size: $font-size-sm;
+
+		h4 {
+			text-transform: capitalize;
+		}
+
+		small {
+			opacity: 0.7;
+		}
+
+		p {
+			margin: 0.25rem 0 0;
+		}
+	}
 }
