@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/sk-tv/static/css/main.000dbffc.css",
-    "main.js": "/sk-tv/static/js/main.1284a11e.js",
+    "main.css": "/sk-tv/static/css/main.e64588ec.css",
+    "main.js": "/sk-tv/static/js/main.fb2be5ad.js",
     "index.html": "/sk-tv/index.html",
     "static/media/tv_icon.svg": "/sk-tv/static/media/tv_icon.e2b44a0f082f23eff0e8fdc92c0699ed.svg",
-    "main.000dbffc.css.map": "/sk-tv/static/css/main.000dbffc.css.map",
-    "main.1284a11e.js.map": "/sk-tv/static/js/main.1284a11e.js.map"
+    "main.e64588ec.css.map": "/sk-tv/static/css/main.e64588ec.css.map",
+    "main.fb2be5ad.js.map": "/sk-tv/static/js/main.fb2be5ad.js.map"
   },
   "entrypoints": [
-    "static/css/main.000dbffc.css",
-    "static/js/main.1284a11e.js"
+    "static/css/main.e64588ec.css",
+    "static/js/main.fb2be5ad.js"
   ]
 }
