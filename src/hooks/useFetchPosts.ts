@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+//Queries
+import { useQuery } from 'react-query';
+//API
+import { fetchPosts } from '../api/api';
 
 //Types
 type PostObj = {
@@ -17,30 +19,7 @@ type DataObj = {
 };
 
 const useFetchPosts = () => {
-	const [ state, setState ] = useState<DataObj>();
-	const [ isLoading, setIsLoading ] = useState(false);
-	const [ error, setError ] = useState(false);
-
-	const getData = async () => {
-		setIsLoading(true);
-		setError(false);
-
-		try {
-			const response = await axios.get('https://sk-tv.herokuapp.com/posts');
-			const data = response.data;
-			setState(data);
-			setIsLoading(false);
-		} catch (error) {
-			setError(true);
-			setIsLoading(false);
-		}
-	};
-
-	useEffect(() => {
-		getData();
-	}, []);
-
-	return { state, isLoading, error };
+	return useQuery<DataObj>([ 'Posts' ], () => fetchPosts());
 };
 
 export default useFetchPosts;

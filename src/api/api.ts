@@ -30,5 +30,9 @@ const fetchSpecificSelection = async (type: string, id: string) => {
 	const response = await axios.get(url);
 	return response.data;
 };
+const fetchPosts = async () => {
+	const response = await axios.get('https://sk-tv.herokuapp.com/posts');
+	return response.data;
+};
 
-export { fetchMovies, fetchTopTenMovies, fetchTvSeries, fetchTopTenSeries, fetchSpecificSelection };
+export { fetchMovies, fetchTopTenMovies, fetchTvSeries, fetchTopTenSeries, fetchSpecificSelection, fetchPosts };
