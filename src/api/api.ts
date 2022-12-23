@@ -31,7 +31,7 @@ const fetchSpecificSelection = async (type: string, id: string) => {
 	return response.data;
 };
 const fetchPosts = async () => {
-	const response = await axios.get('https://sk-tv.herokuapp.com/posts');
+	const response = await axios.get('https://sk-tv-rest-api.vercel.app/posts');
 	return response.data;
 };
 

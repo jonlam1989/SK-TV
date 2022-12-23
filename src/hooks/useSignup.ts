@@ -18,7 +18,7 @@ const useSignup = () => {
 
 	const signupUser = async (name: string, email: string, password: string) => {
 		try {
-			const response = await axios.post('https://sk-tv.herokuapp.com/auth/register', {
+			const response = await axios.post('https://sk-tv-rest-api.vercel.app/auth/register', {
 				name,
 				email,
 				password

@@ -21,7 +21,7 @@ const TopTenContextProvider = ({ children }: any) => {
 	useEffect(() => {
 		const getImdbMovieIds = async () => {
 			try {
-				const response = await axios.get('https://sk-tv.herokuapp.com/api/topmovies');
+				const response = await axios.get('https://sk-tv-rest-api.vercel.app/api/topmovies');
 				const { data } = response;
 
 				setImdbMovieIds({ ...data });
@@ -32,7 +32,7 @@ const TopTenContextProvider = ({ children }: any) => {
 
 		const getImdbSeriesIds = async () => {
 			try {
-				const response = await axios.get('https://sk-tv.herokuapp.com/api/toptvseries');
+				const response = await axios.get('https://sk-tv-rest-api.vercel.app/api/toptvseries');
 				const { data } = response;
 
 				setImdbSeriesIds({ ...data });
