@@ -36,6 +36,10 @@ A simplified version of IMDb, but with the goal of introducing people to great m
 #### | Info Page |
 <img src='https://user-images.githubusercontent.com/88560266/167151400-cbe28fec-93a9-492e-8bbd-6b60e0d11742.png' alt='screenshot' width='800px' />
 
+#### | Community Page |
+<img src='https://user-images.githubusercontent.com/88560266/210269904-0664a5b7-0c07-4ca8-a0e9-15b8cffb9b4f.png' alt='screenshot' width='800px' />
+<img src='https://user-images.githubusercontent.com/88560266/210269925-7c8d97de-cdb7-4eab-b5e0-8406522eb1cc.png' alt='screenshot' width='800px' />
+
 ## Technologies
 
 - HTML
