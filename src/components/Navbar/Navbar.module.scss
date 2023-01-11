@@ -14,6 +14,10 @@ nav {
     display: grid;
     grid-template-columns: 75px 1fr;
     text-shadow: $dark-shadow;
+    span {
+        font-size: 1.6rem;
+        color: $primary-button;
+    }
 }
 
 .navLinks {
@@ -86,7 +90,7 @@ nav {
             li {
                 margin-bottom: $spacing-lg;
                 transition: $fast-transition;
-                
+
                 &:hover {
                     padding-left: $spacing-sm;
                     box-shadow: -3px 0px $primary-text;

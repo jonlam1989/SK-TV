@@ -31,16 +31,16 @@ const Navbar: React.FC = () => {
 	const menu: JSX.Element = (
 		<ul className={styles.navMenuContent} ref={menuContentRef}>
 			<li>
-				<NavLink to='/sk-tv'>Movies</NavLink>
+				<NavLink to='/sk-tv'><span>Movies</span></NavLink>
 			</li>
 			<li>
-				<NavLink to='/sk-tv/top-ten-movies'>Top 10 Movies</NavLink>
+				<NavLink to='/sk-tv/top-ten-movies'><span>Top 10 Movies</span></NavLink>
 			</li>
 			<li>
-				<NavLink to='/sk-tv/tv-series'>TV Series</NavLink>
+				<NavLink to='/sk-tv/tv-series'><span>TV Series</span></NavLink>
 			</li>
 			<li>
-				<NavLink to='/sk-tv/top-ten-tv-series'>Top 10 TV Series</NavLink>
+				<NavLink to='/sk-tv/top-ten-tv-series'><span>Top 10 Series</span></NavLink>
 			</li>
 		</ul>
 	);
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
 	return (
 		<nav>
 			<div className={styles.navBrand}>
-				<h2>SK-TV</h2>
+				<h2><span>SK</span>-TV</h2>
 				<img src={tv_icon} alt='brand-logo' />
 			</div>
 

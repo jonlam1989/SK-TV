@@ -62,6 +62,10 @@
         display: grid;
         justify-items: center;
 
+        p {
+            color: $primary-button;
+        }
+
         @include for-size(tablet-and-up) {
             justify-items: start;
         }
