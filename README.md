@@ -1,7 +1,5 @@
 # SK-TV
 
-#### Live site: https://jonlam1989.github.io/sk-tv/
-
 ## Description
 
 A simplified version of IMDb, but with the goal of introducing people to great movies and tv-shows from South Korea
